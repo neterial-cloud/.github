@@ -1,22 +1,15 @@
-### [Neterial - Сloud-agnostic Managed Kubernetes, Databases, and beyond](https://neterial.io/)
+### [Neterial - Your app. Your cloud. Vibe deploy in minutes](https://neterial.io/)
 
 **[Documentation](https://docs.neterial.io)**
 
 #### Projects
 
-- **[Neterial CLI](https://github.com/neterialio/cli)** — create and manage k8s clusters from the command-line
+- **[Neterial CLI](https://github.com/neterialio/cli)** — create and manage k3s clusters from the command-line
 
 #### About
 
-We help early-stage startups focused on developing their MVP to save money on cloud services.
-Entrepreneurs often struggle to deploy cloud infrastructure for their MVP in the most cost-efficient way.
-Options such as AWS, GCP, Azure may not be viable due to their extremely high costs, even with free tiers available.
-Alternatively, other solutions may require expertise to deploy all the necessary tools on your own.
+Neterial is a deployment automation layer that provides a PaaS-like workflow on your own cloud infrastructure. It connects directly to your GitHub account and your chosen cloud provider (AWS or Hetzner), acting as a control plane to automate the entire deployment process. The core function is to bridge the gap between a git push and a running application, giving developers the convenience of a managed platform without surrendering ownership of their hardware.
 
-Our cloud-agnostic platform helps to efficiently set up and manage Kubernetes, databases, and beyond,
-leveraging affordable cloud providers like Hetzner, OVH, Linode, Digital Ocean, etc.
+The project was created to solve the fundamental trade-offs of modern deployment solutions. All-in-one PaaS platforms (e.g., Vercel, Heroku) offer a great developer experience but result in opaque, unpredictable pricing, high vendor lock-in, and a complete lack of infrastructure control. The alternative, a fully DIY approach on a cloud provider, offers total control but introduces significant DevOps complexity and maintenance overhead. Neterial is designed to offer the best of both worlds: a streamlined, automated workflow on infrastructure you fully own and control.
 
-Our mission is to provide cost-effective Cloud Management Platform that prioritize financial efficiency
-and cloud independence for startups, especially for bootstraps. We aim to help Customers reduce their
-initial cloud infrastructure expenses and maintain freedom in their long-term cloud strategy,
-which is crucial for scaling their products without being constrained by specific cloud providers.
+Under the hood, Neterial automates the provisioning of a VM in the user's cloud account and configures a lightweight, production-ready K3s cluster inside it. A GitHub integration monitors your repository for new commits, triggering automated builds and deployments. The platform includes zero-config templates for popular frameworks (Next.js, etc.), a full-featured CLI for terminal-based management, and a web console for observing deployment history, and managing infrastructure.
